@@ -8,7 +8,7 @@
     	appenders 日志输出的配置
     		appenders 是一个字典形式的参数，其中的每一个 key 作为日志的一种输出方式，每一种方式对应更具体的设置
     		例子：
-    		    ``` javascript
+    		    ``` ruby
                 var appenders = {
         		    out: {
                     	type: 'console'
