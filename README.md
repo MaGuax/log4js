@@ -8,17 +8,19 @@ logger.js
     	appenders 日志输出的配置
     		appenders 是一个字典形式的参数，其中的每一个 key 作为日志的一种输出方式，每一种方式对应更具体的设置
     		例子：
-    				    var appenders = {
-        						out: {
-                    		type: 'console'
-        						}，
-        						file: {
+    		    ```
+                var appenders = {
+        		    out: {
+                    	type: 'console'
+        			}，
+					file: {
                       	type: 'dateFile'
                       	filename: './logs,
                       	pattern: '-yyyy-MM-dd',
                       	alwaysIncludePattern: true
-        						}
-        				}
+                    }
+        		}
+                ```
         上面写了两个具体的例子，每一种输出方式的设置中，必须包含 type 属性
         参数说明
         type：日志输出方式 
@@ -30,7 +32,8 @@ logger.js
     	categories 日志输出的级别和方式
     			categories 是一个字典形式的参数，是给 logger 实例用的配置，其中的每一个 key 作为 logger 实例的一个类别，也就是 logger 的 category 参数，category对应的设置为 logger 实例的级别和输出方式，如果在 categories 中能找到对应的配置，则用对应配置的输出级别和配置，如果没有则用默认的 category 配置，也就是 default
     			例子（和上面的例子是关联的）：
-    			    categories: {
+    			```
+                categories: {
                   default: {
                       appenders: ['out'],
                       level: 'info'
@@ -42,7 +45,8 @@ logger.js
                   test_error: {
                       appenders: ['out', 'error'],
                       level: 'error'
-                  }
+                }
+                ```
             }
             上面的例子中，default 类别会作为当 logger 实例找不到它的 category 配置时，默认使用的配置。其他的类别名称由用户自定义
             参数说明
